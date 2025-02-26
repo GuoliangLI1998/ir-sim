@@ -32,6 +32,11 @@ def test_all_objects():
     env2.robot.get_lidar_offset()
     env2.robot.get_init_Gh()
 
+    env2.get_obstacle_info_list()
+    env2.get_robot_info_list()
+
+    env2.delete_objects([1, 2])
+
     for i in range(10):
         env2.step()
         env2.render(0.01)
@@ -42,7 +47,7 @@ def test_all_objects():
     for i in range(3):
         env3.step()
         env3.render(0.01)
-    env3.end()
+    env3.end(ani_name='test_animation')
 
     env4 = irsim.make('test_collision_world.yaml', save_ani=False, display=False)
 
@@ -111,7 +116,7 @@ def test_all_objects():
 
     env10 = irsim.make('test_multi_objects_world.yaml', save_ani=False, display=False, projection='3d')
 
-    env10.random_obstacle_position(ids=[3, 4, 5, 6, 7])
+    env10.random_obstacle_position(ids=[3, 4, 5, 6, 7], non_overlapping=True)
 
     for i in range(5):
         env10.step()

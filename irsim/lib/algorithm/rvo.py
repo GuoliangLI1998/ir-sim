@@ -43,16 +43,15 @@ class reciprocal_vel_obs:
         self.obs_state_list = obs_state_list
 
     def cal_vel(self, mode="rvo"):
-
-        '''
+        """
         Calculate the velocity of the agent based on the Reciprocal Velocity Obstacle (RVO) algorithm.
-        
+
         Args:
             mode (str): The vo configure to calculate the velocity. It can be "rvo", "hrvo", or "vo".
                 - rvo: Reciprocal Velocity Obstacle (RVO) algorithm, for multi-robot collision avoidance.
                 - hrvo: Hybrid Reciprocal Velocity Obstacle (HRVO) algorithm, for multi-robot collision avoidance.
                 - vo: Velocity Obstacle (VO) algorithm, for obstacle-robot collision avoidance.
-        '''
+        """
 
         if mode == "rvo":
             rvo_list = self.config_rvo()
@@ -72,7 +71,7 @@ class reciprocal_vel_obs:
     def config_rvo(self):
 
         rvo_list = []
-        
+
         for obstacle in self.obs_state_list:
             rvo = self.config_rvo_mode(obstacle)
             rvo_list.append(rvo)
@@ -163,7 +162,6 @@ class reciprocal_vel_obs:
         else:
             mode = "moving"
 
-
         if mode == "moving":
 
             mx = obstacle[0]
@@ -241,7 +239,7 @@ class reciprocal_vel_obs:
         vo_list = []
 
         for obstacle in self.obs_state_list:
-            
+
             vo = self.config_vo_mode(obstacle)
             vo_list.append(vo)
 
@@ -372,7 +370,7 @@ class reciprocal_vel_obs:
                 2 * vel[0] - self.state[2] - moving[2],
                 2 * vel[1] - self.state[3] - moving[3],
             ]
-            vel_trans_speed = np.sqrt(vel_trans[0] ** 2 + vel_trans[1] ** 2)
+            vel_trans_speed = np.sqrt(vel_trans[0] ** 2 + vel_trans[1] ** 2) + 1e-7
 
             tc = dis_vel / vel_trans_speed
 

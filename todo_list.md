@@ -1,4 +1,4 @@
-## To do list
+## To Do List
 - [x] Basic framework
 - [x] Mobile robot movement
 - [x] collision check
@@ -27,13 +27,13 @@
 - [x] robot description 
 - [x] Construct the object base class for the robot and obstacles
 - [ ] All the rotation and translation can be represented by the homogeneous transformation matrix
-- [ ] transfer the function from the previous version
+- [x] show the text of the object
 - [ ] real robot size (LIMO, BYD)
 - [ ] Using decorator to update
 - [x] code annotation for main class
 - [ ] Add the data monitor
 - [ ] Add the interface with gym
-- [ ] Support the feature of adding or eliminating obstacles by functions
+- [x] Support the feature of adding or eliminating obstacles by functions
 - [ ] Add functions to access obstacles with different types
 - [ ] Add more key functions for keyboard control
 - [ ] Develop Tools for tackling Data
@@ -63,7 +63,7 @@
 - [x] Make the dependency of the package optional
 - [ ] 3D rigid body
 - [x] Documentation
-- [ ] robotics arm support
+- [ ] robotics arm, UAV support
 - [ ] assign robot goals by mouse click
 - [ ] Add wrapper for ORCA algorithm
 - [x] Reorganize the structure of the readme demonstration
@@ -75,3 +75,7 @@
 - [ ] Interface with ROS
 - [ ] Interface with Pybullet or Gazebo
 - [ ] Add ORCA Behavior
+- [ ] unify the G, h and obstacles, object information
+- [ ] organize the test cases
+- [ ] Add binary occupancy grid map for indoor navigation
+- [ ] traffic scenarios
